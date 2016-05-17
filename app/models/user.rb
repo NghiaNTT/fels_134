@@ -19,7 +19,11 @@ class User < ActiveRecord::Base
       SecureRandom.urlsafe_base64
     end
   end
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> Show all courses
   def remember
     self.remember_token = User.new_token
     update_attributes remember_digest: User.digest(remember_token)
