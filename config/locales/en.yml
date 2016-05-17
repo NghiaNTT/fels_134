@@ -12,3 +12,18 @@ en:
   contact_pages:
     link_contact: "Contact page"
     content_contact: "Please contact with our Elearning-System if you have any difficult"
+  signup_pages:
+    title_signup: "Sign up"
+    create_account: "Create my account"
+    confirm: "Confirmation"
+    flash_messg: "Welcome to the E-learning system!"
+    error_msg: "error"
+  flash_message:
+    flash: "Invalid email/password, try again"
+    remember: "Remember me on this computer"
+    new_user: "New user?"
+  login_logout:
+    users: "Users"
+    profile: "Profile"
+    settings: "Settings"
+    logout: "Log out"
