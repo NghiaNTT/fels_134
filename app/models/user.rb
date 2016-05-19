@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
   class << self
     def digest string
@@ -22,7 +22,11 @@ class User < ActiveRecord::Base
   
   def remember
     self.remember_token = User.new_token
-    update_attributes remember_digest: User.digest remember_token
+    update_attributes remember_digest: User.digest(remember_token)
+  end
+
+  def current_user? user
+    user == current_user
   end
 
   def authenticated? remember_token
@@ -30,10 +34,8 @@ class User < ActiveRecord::Base
     BCrypt::Password.new remember_digest.is_password? remember_token
   end
 
-  def forget user
-    user.forget
-    cookies.delete :user_id
-    cookies.delete :remember_token
+  def forget
+    update_attributes remember_digest: nil
   end
 
   def log_out
