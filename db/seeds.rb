@@ -34,3 +34,41 @@ Category.create! name: "Italian",
 
 Category.create! name: "Chinese",
                  description: "Learning Chinese"
+
+Word.create! name: "Banana",
+             category_id: 1
+Word.create! name: "Apple",
+             category_id: 1
+Word.create! name: "Orange",
+             category_id: 1
+Word.create! name: "Tomato",
+             category_id: 1
+Word.create! name: "Potato",
+             category_id: 1
+Word.create! name: "Mango",
+             category_id: 1
+Word.create! name: "Lemon",
+             category_id: 1
+Word.create! name: "Watermelon",
+             category_id: 1
+Word.create! name: "Pinapple",
+             category_id: 1
+
+Word.create! name: "バナナ",
+             category_id: 2
+Word.create! name: "林檎",
+             category_id: 2
+Word.create! name: "オレンジ",
+             category_id: 2
+Word.create! name: "トマト",
+             category_id: 2
+Word.create! name: "ポテト",
+             category_id: 2
+Word.create! name: "マンゴー",
+             category_id: 2
+Word.create! name: "レモン",
+             category_id: 2
+Word.create! name: "スイカ",
+             category_id: 2
+Word.create! name: "パイナップル",
+             category_id: 2

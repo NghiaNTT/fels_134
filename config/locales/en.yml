@@ -25,6 +25,8 @@ en:
     remember: "Remember me on this computer"
     new_user: "New user?"
     admin_user: "You logged in to management system"
+    delete_category: "This category will be deletd. You sure?"
+    delete_success: "Category deleted!"
   edit_users:
     title_edit: "Edit user"
     save_change: "Save changes"
@@ -37,6 +39,9 @@ en:
     login: "Log in"
     profile_update: "Profile updated"
     please_login: "Please login"
+  edit_category:
+    save_change: "Save changes"
+    edit_success: "Category updated"
   index_pages:
     all_users: "All users"
     delete: "Delete"

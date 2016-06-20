@@ -17,8 +17,13 @@
         <td>
           <li><%= link_to t("Course.details"), admin_category_path(category) %></li>
         </td>
-        <td><li><%= link_to t("Course.edit"), "#" %></li></td>
-        <td><li><%= link_to t("Course.delete"), "#" %></li></td>
+        <td><li><%= link_to t("Course.edit"), edit_category_path(category)  %></li></td>
+        <td>
+          <li>
+            <%= link_to t("Course.delete"), admin_category_path(category),
+            method: :delete, data: { confirm: t("flash_message.delete_category") } %>
+          </li>
+        </td>
       </tr>
     <% end %>
   </tbody>
