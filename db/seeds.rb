@@ -24,3 +24,12 @@ User.create! name:  "Admin",
   Category.create(name: "Category #{category_id}",
                   description: "Learning Category #{category_id}" )
 end
+
+Word.create! name: "banana",
+             category_id: 1
+
+Word.create! name: "tomato",
+             category_id: 1
+
+Word.create! name: "orange",
+             category_id: 1

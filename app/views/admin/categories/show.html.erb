@@ -14,5 +14,20 @@
         </h6>
       </span>
     </div>
+    <table class="table table-striped">
+      <% @words.each do |word| %>
+        <tr>
+          <td><%= word.name %></td>
+          <td>
+            <%= link_to t("index_pages.delete"), admin_category_word_path(@category, word),
+              method: :delete, data:
+              {confirm: t("flash_message.delete_word")}, class: "btn btn-sm btn-danger"%>
+          </td>
+          <td>
+            <%= link_to t("index_pages.edit"),'#' %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>
