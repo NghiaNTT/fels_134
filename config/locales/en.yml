@@ -92,3 +92,11 @@ en:
     list_categories: "All category"
     create_success: "Lesson Created successfully!"
     create_unsuccess: "Unsuccessfully!"
+  filter_word:
+    wordslist: "Words List"
+    all: "Alls"
+    filterall: "Filter All"
+    learned: "Learned"
+    notlearned: "Not Learned"
+    filter: "Filter"
+    result: "Result"
