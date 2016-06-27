@@ -100,3 +100,5 @@ en:
     notlearned: "Not Learned"
     filter: "Filter"
     result: "Result"
+    lesson_score: "Score"
+    save_lesson: "Save"
