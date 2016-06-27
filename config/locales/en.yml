@@ -78,8 +78,17 @@ en:
     flash_update_success: "Updated successfully!"
     flash_update_fail: "Update failed"
     list_word: "List word of category"
+    word_list: "Word list"
     answer:
       delete: "Delete"
       add_answer: "Add answer"
       content: "Content"
     show_all_words: "All word"
+  lessons:
+    start: "Start"
+    lesson: "Lesson"
+    lesson_list: "All lesson"
+    start_lesson: "Start lesson"
+    list_categories: "All category"
+    create_success: "Lesson Created successfully!"
+    create_unsuccess: "Unsuccessfully!"

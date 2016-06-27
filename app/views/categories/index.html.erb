@@ -1,9 +1,11 @@
+<% provide :title, t("lessons.list_categories") %>
 <hr>
 <table class = "table table-striped">
   <thead>
     <tr>
       <th><%= t "Course.name" %></th>
       <th><%= t "Course.description" %></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +13,12 @@
       <tr>
         <td><%= category.name %></td>
         <td><%= category.description %></td>
+        <td>
+          <%= form_tag lessons_path, method: :post do %>
+            <%= hidden_field_tag "lesson[category_id]", category.id  %>
+            <%= submit_tag t("lessons.start"), class: "btn btn-sm btn-info" %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
