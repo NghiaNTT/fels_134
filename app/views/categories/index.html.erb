@@ -16,7 +16,7 @@
         <td>
           <%= form_tag lessons_path, method: :post do %>
             <%= hidden_field_tag "lesson[category_id]", category.id  %>
-            <%= submit_tag t("lessons.start"), class: "btn btn-sm btn-info" %>
+            <%= submit_tag t("lessons.start"), class: "btn btn-primary" %>
           <% end %>
         </td>
       </tr>

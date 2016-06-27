@@ -44,7 +44,7 @@ class Admin::WordsController < ApplicationController
   private
   def word_params
     params.require(:word).permit :name, :category_id,
-      word_answers_attributes: [:id, :content, :is_correct, :_destroy]
+      answers_attributes: [:id, :content, :is_correct, :_destroy]
   end
 
   def load_category

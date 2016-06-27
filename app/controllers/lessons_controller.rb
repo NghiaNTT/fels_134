@@ -3,7 +3,10 @@ class LessonsController < ApplicationController
   before_action :find_lesson, only: [:show]
 
   def show
-
+    if @lesson.status.present?
+      ids = @lesson.lesson_words.map &:answer_id
+      @answers = Answer.eager_load_by_ids(ids)
+    end
   end
 
   def new
