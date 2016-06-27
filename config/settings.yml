@@ -2,3 +2,4 @@ filter_options:
   - alls
   - learned
   - not_learned
+lesson_word_size: 5

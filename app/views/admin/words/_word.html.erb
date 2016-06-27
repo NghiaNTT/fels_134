@@ -4,7 +4,7 @@
     <ul class="hidden_list_answer choose-success">
       <% word.answers.each do |answer| %>
         <li>
-          <%= answer.content %> | <%= answer.correct %>
+          <%= answer.content %> | <%= answer.is_correct %>
         </li>
       <% end %>
     </ul>

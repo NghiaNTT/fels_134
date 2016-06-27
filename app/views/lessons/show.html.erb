@@ -12,3 +12,34 @@
     </section>
   </aside>
 </div>
+<div class="row">
+  <section>
+    <% if @lesson.status.present? %>
+      <%= t "lessons.lesson_score" %>
+      <%= @lesson.lesson_words.is_correct.count %>/
+      <%= @lesson.words.count %>
+    <% else %>
+      <%= form_for @lesson do |f| %>
+        <%= f.hidden_field :status, value: true %>
+        <%= f.fields_for :lesson_words do |builder| %>
+          <div class="form-group">
+            <label><%= builder.object.word.name %></label>
+            <div>
+              <div >
+                <% builder.object.word.answers.each do |answer| %>
+                  <%= builder.radio_button :answer_id, answer.id %>
+                  <%= answer.content %>
+                  <%= builder.hidden_field :word_id %>
+                  <br/>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="col-md-2">
+          <%= f.submit t("lessons.save_lesson"), class: "btn btn-primary btn-lg" %>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+</div>
