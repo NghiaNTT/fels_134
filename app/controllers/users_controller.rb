@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @words = Word.learned(@user.id)
+    @words = Word.learned_by(@user.id)
     @activities = @user.activities.order(created_at: :desc).paginate page: params[:page]
   end
 

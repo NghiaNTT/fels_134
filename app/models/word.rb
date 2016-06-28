@@ -16,7 +16,7 @@ class Word < ActiveRecord::Base
 
   scope :by_ids, ->ids{where id: ids}
   scope :not_learned, ->user_id{where QUERRY_NOT_LEARNDED, user_id}
-  scope :learned, ->user_id{where QUERRY_LEARNDED, user_id}
+  scope :learned_by, ->user_id{where QUERRY_LEARNDED, user_id}
   scope :alls, ->user_id{}
   scope :by_category, ->category_id do
     where category_id: category_id if category_id.present?
