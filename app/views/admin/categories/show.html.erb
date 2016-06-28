@@ -20,11 +20,23 @@
           class: "btn btn-lg btn-primary" %>
       </div>
     </div>
+    <br/>
     <table class="table table-striped">
       <% @words.each do |word| %>
         <tr>
           <td>
-            <%= word.name %>
+            <p class="show-answer"><%= word.name %></p>
+            <ul class="hidden_list_answer choose-success">
+            <% word.answers.each do |answer| %>
+              <li>
+                <%= answer.content %> | <%= answer.is_correct %>
+              </li>
+            <% end %>
+            </ul>
+          </td>
+          <td>
+            <%= link_to t("words.edit"), edit_admin_category_word_path(@category, word),
+              class: "btn btn-sm btn-info" %>
           </td>
           <td>
             <%= link_to t("index_pages.delete"), admin_category_word_path(@category, word),
@@ -34,19 +46,5 @@
         </tr>
       <% end %>
     </table>
-  </div>
-  <div class="col s7">
-    <div class="card-panel">
-      <div class="login">
-        </br>
-        </br>
-        <h2><%= t "words.list_word" %></h2>
-        <div class="row">
-          <div class="col s12">
-            <%= render "admin/words/index_word" %>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

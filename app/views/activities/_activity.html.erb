@@ -1,0 +1,21 @@
+<li class="user_follow">
+  <%= link_to gravatar_for activity.user %>
+  <%= link_to activity.user.name, activity.user %>
+  <% if activity.action_type == Settings.activity.learned %>
+    <%= t "activities.learn" %>
+    <%= activity.load_lesson.lesson_words.is_corrects.count %>|
+    <%= t "activities.word" %>
+    <%=link_to activity.load_lesson.category.name, activity.load_lesson %>|
+  <% elsif  activity.action_type == Settings.activity.learning %>
+    <%= t "activities.learning" %>
+    <%=link_to activity.load_lesson.category.name, activity.load_lesson %>|
+  <% elsif activity.action_type == Settings.activity.follow %>
+    <%= t "activities.follow" %>|
+    <%= link_to activity.load_user.name %>
+  <% else%>
+    <%= t "activities.unfollow" %>|
+    <%= link_to activity.load_user.name %>
+  <% end %>
+  <%= time_ago_in_words(activity.created_at) %>
+  <%= t "activities.ago" %>
+</li>

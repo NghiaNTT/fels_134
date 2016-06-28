@@ -113,3 +113,12 @@ en:
   shared:
     following: "Following"
     followers: "Followers"
+  activities:
+    learned: "learned"
+    word: "word"
+    learning: "learning"
+    follow: "follow"
+    unfollow: "unfollow"
+    ago: "ago"
+    activities: "activities"
+    no_activities: "No activities"
