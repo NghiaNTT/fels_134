@@ -1,0 +1,29 @@
+<% provide :title, t("index_pages.all_users") %>
+<h1><%= t "index_pages.all_users" %></h1>
+
+<ul class="users">
+  <table class="table table-striped">
+    <thead>
+       <tr>
+        <th><%= t "index_pages.gravatar" %></th>
+        <th><%= t "index_pages.name" %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= gravatar_for user %>
+          </td>
+          <td>
+            <%= link_to user.name, user %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</ul>
+
+<%= will_paginate %>

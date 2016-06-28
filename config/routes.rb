@@ -8,10 +8,16 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
-  resources :users
+
+  resources :users do
+    member do
+      get "/:path", :to => "relationships#index", as: "follow"
+    end
+  end
   resources :categories, only: [:show, :index]
   resources :lessons, except: [:edit, :destroy]
   resources :words
+  resources :relationships, only: [:create, :destroy]
   namespace :admin do
     root "admin_users#index"
     resources :users, only: [:show, :index]

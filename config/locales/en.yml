@@ -105,3 +105,11 @@ en:
     filter: "Filter"
     result: "Result"
     lesson_score: "Score"
+    save_lesson: "Save"
+  user:
+    follow: "Follow"
+    unfollow: "Unfollow"
+    view_profile: "View my profile"
+  shared:
+    following: "Following"
+    followers: "Followers"
