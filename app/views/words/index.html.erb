@@ -12,7 +12,7 @@
             class: "form-control" %>
         </div>
         <div>
-          <% Settings[filter_options].each do |option| %>
+          <% Settings["filter_options"].each do |option| %>
             <label>
               <%= radio_button_tag :filter_type, option,
                 params[:filter_type] == option, class: "radio-inline" %>

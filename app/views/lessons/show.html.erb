@@ -18,6 +18,7 @@
       <%= t "lessons.lesson_score" %>
       <%= @lesson.lesson_words.is_correct.count %>/
       <%= @lesson.words.count %>
+      <%= render "show_result" %>
     <% else %>
       <%= form_for @lesson do |f| %>
         <%= f.hidden_field :status, value: true %>
