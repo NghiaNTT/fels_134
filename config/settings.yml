@@ -3,3 +3,8 @@ filter_options:
   - learned
   - not_learned
 lesson_word_size: 5
+activity:
+  learned: "learned"
+  learning: "learning"
+  follow: "follow"
+  unfollow: "unfollow"

@@ -1,4 +1,6 @@
 class Lesson < ActiveRecord::Base
+  include CreateActivity
+
   belongs_to :user
   belongs_to :category
   has_many :lesson_words, dependent: :destroy
@@ -10,6 +12,8 @@ class Lesson < ActiveRecord::Base
 
   before_create :random_words
   before_update :change_status
+  after_update :create_learned_activities
+  after_create :create_learning_activities
 
   private
   def random_words
@@ -22,5 +26,13 @@ class Lesson < ActiveRecord::Base
 
   def change_status
     self.status = self.status.nil?
+  end
+
+  def create_learned_activities
+    create_activity self.user_id, self.id, Settings.activity.learned
+  end
+
+  def create_learning_activities
+    create_activity self.user_id, self.id, Settings.activity.learning
   end
 end
