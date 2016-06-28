@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
-  before_action :logged_in_user
-  before_action :find_lesson, only: [:show]
+  before_action :logged_in_user, only: [:update]
+  before_action :find_lesson, only: [:show, :update]
 
   def show
     if @lesson.status.present?
@@ -10,7 +10,6 @@ class LessonsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -21,6 +20,16 @@ class LessonsController < ApplicationController
     else
       flash[:danger] = t "lessons.create_unsuccess"
       redirect_to @category
+    end
+  end
+
+  def update
+    if @lesson.update_attributes lesson_params
+      redirect_to @lesson
+      flash[:success] = t "lessons.save"
+    else
+      flash[:danger] = t "lessons.fail"
+      redirect_to :back
     end
   end
 
