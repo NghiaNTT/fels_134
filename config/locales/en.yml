@@ -92,6 +92,10 @@ en:
     list_categories: "All category"
     create_success: "Lesson Created successfully!"
     create_unsuccess: "Unsuccessfully!"
+    lesson_score: "Your score"
+    save_lesson: "Save"
+    save: "Your answer was saved!"
+    fail: "Have an error! Try again! "
   filter_word:
     wordslist: "Words List"
     all: "Alls"
@@ -101,4 +105,3 @@ en:
     filter: "Filter"
     result: "Result"
     lesson_score: "Score"
-    save_lesson: "Save"
