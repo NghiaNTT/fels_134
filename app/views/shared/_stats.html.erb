@@ -5,7 +5,7 @@
       <%= @user.following.count %>
     </strong>
     <strong>
-      <%= link_to t("shared.following"), user_following_index_path(@user) %>
+      <%= link_to t("shared.following"),  user_follow_path(@user, path: "following") %>
     </strong>
   </label class="label-auto">
   <label class="label-auto">
@@ -13,7 +13,7 @@
       <%= @user.followers.count %>
     </strong>
     <strong>
-      <%= link_to t("shared.followers"), user_follower_index_path(@user) %>
+      <%= link_to t("shared.followers"),  user_follow_path(@user, path: "followers") %>
     </strong>
   </label>
 </div>

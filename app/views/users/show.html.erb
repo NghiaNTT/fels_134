@@ -7,6 +7,9 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
   </aside>
   <div class="col-md-8">
     <div class="row">
@@ -17,5 +20,6 @@
         <%= link_to t("lessons.lesson"), categories_path,class: "btn btn-lg btn-danger" %>
       </div>
     </div>
+    <%= render "follow_form" if logged_in? %>
   </div>
 </div>
