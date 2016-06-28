@@ -92,6 +92,7 @@ en:
     list_categories: "All category"
     create_success: "Lesson Created successfully!"
     create_unsuccess: "Unsuccessfully!"
+    lesson_score: "Your score"
   filter_word:
     wordslist: "Words List"
     all: "Alls"
